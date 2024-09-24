@@ -16,5 +16,15 @@ public class Alergia {
     private String nome;
 
     @Column(name = "tipoAlergia", nullable = false)
-    private int tipoAlergia;
+    @Enumerated(EnumType.ORDINAL)
+    private TiposAlergia tipoAlergia;
+
+
+    public Alergia(String nome, TiposAlergia tipoAlergia) {
+        this.nome = nome;
+        this.tipoAlergia = tipoAlergia;
+    }
+
+    public Alergia() {
+    }
 }
